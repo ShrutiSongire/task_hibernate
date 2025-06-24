@@ -16,5 +16,10 @@ public class Service {
 		StudentDao ed=new StudentDao();
 		ed.delete();
 	}
+	public void SelectData() {
+		StudentDao ed=new StudentDao();
+		ed.select();
+	}
+
 
 }

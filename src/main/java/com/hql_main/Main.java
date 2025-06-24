@@ -1,4 +1,4 @@
-package com.main;
+package com.hql_main;
 
 import java.util.List;
 

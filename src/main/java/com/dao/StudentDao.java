@@ -1,5 +1,7 @@
 package com.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -76,6 +78,27 @@ public class StudentDao {
 		System.out.println("Data is deleted");
 		tr.commit();
 		ss.close();
+	}
+	
+	public void select() {
+
+		Configuration cfg=new Configuration();
+		cfg.configure();
+		cfg.addAnnotatedClass(Student.class);
+		
+		
+		
+		SessionFactory sf= cfg.buildSessionFactory();
+		Session ss=sf.openSession();
+		Transaction tr=ss.beginTransaction();
+		
+		List<Student> list=ss.createQuery("from Student",Student.class).list();
+		for (Student student : list) {
+			System.out.println("Student name:"+student.getStud_name());
+			
+			System.out.println("Student city:"+ student.getCity());
+			
+		}
 	}
 
 }

@@ -9,6 +9,7 @@ public class Controller {
 //		s.InsertData();
 //		s.UpdateData();
 //		s.DeleteData();
+		s.SelectData();
 
 	}
 
